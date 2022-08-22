@@ -1,0 +1,116 @@
+/*Colors*/
+/*Cards*/
+/*General colors*/
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+* root {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 0;
+  margin: 0;
+  background-color: hsl(226deg, 43%, 10%);
+}
+
+html {
+  font-size: 18px;
+  font-family: "Rubik", sans-serif;
+}
+
+.container > * {
+  color: white;
+  background-color: hsl(235deg, 46%, 20%);
+  border-radius: 15px;
+  justify-items: stretch;
+  height: 18rem;
+  width: 18rem;
+  background-repeat: no-repeat;
+  background-position: 90% 0;
+}
+
+.main-card {
+  grid-area: main;
+  grid-row: 1/span 2;
+  height: 37rem;
+  background-color: hsl(235deg, 46%, 20%);
+}
+
+.card-work {
+  background-image: url("../../images/icon-work.svg");
+  background-color: hsl(15deg, 100%, 70%);
+}
+
+.card-play {
+  background-image: url("../../images/icon-play.svg");
+  background-color: hsl(195deg, 74%, 62%);
+}
+
+.card-study {
+  background-image: url("../../images/icon-study.svg");
+  background-color: hsl(348deg, 100%, 68%);
+}
+
+.card-exercise {
+  background-image: url("../../images/icon-exercise.svg");
+  background-color: hsl(145deg, 58%, 55%);
+}
+
+.card-social {
+  background-image: url("../../images/icon-social.svg");
+  background-color: hsl(264deg, 64%, 52%);
+}
+
+.card-selfcare {
+  background-image: url("../../images/icon-self-care.svg");
+  background-color: hsl(43deg, 84%, 65%);
+}
+
+.card-content {
+  height: 12rem;
+  width: 15rem;
+  background-color: hsl(235deg, 46%, 20%);
+  position: relative;
+  top: 3rem;
+  border-radius: 15px;
+  padding: 1.5rem;
+}
+
+.main-content {
+  height: 25rem;
+  background-color: hsl(246deg, 80%, 60%);
+  border-radius: 15px;
+}
+
+.card-title {
+  display: inline;
+  font-size: 1.5rem;
+}
+
+.elipsis {
+  position: absolute;
+  left: 80%;
+}
+
+.card-hrs {
+  font-size: 4.5rem;
+  margin: 3rem 0rem 0rem 0rem;
+  font-weight: 300;
+}
+
+/*Colors*/
+/*Cards*/
+/*General colors*/
+.container {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: auto auto;
+  grid-template-areas: "main work play study" "main exercise social selfcare";
+  gap: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}/*# sourceMappingURL=style.css.map */
