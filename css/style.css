@@ -30,7 +30,12 @@ html {
     font-size: 10px;
   }
 }
-.container > * {
+@media only screen and (max-width: 550px) {
+  html {
+    font-size: 6.6px;
+  }
+}
+.grid > * {
   color: white;
   background-color: hsl(235deg, 46%, 20%);
   border-radius: 15px;
@@ -39,44 +44,69 @@ html {
   background-position: 90% 0;
 }
 
-.main-card {
+.grid__profileCard {
   grid-area: main;
   grid-row: 1/span 2;
   height: 31rem;
   background-color: hsl(235deg, 46%, 20%);
 }
-
-.card-work {
+.grid__profileCard--content {
+  height: 18rem;
+  background-color: hsl(246deg, 80%, 60%);
+  border-radius: 15px;
+  padding: 1.5rem;
+}
+.grid__profileCard--profilePic {
+  border: 3px solid white;
+  border-radius: 50%;
+  height: 4rem;
+  margin-bottom: 1rem;
+}
+.grid__profileCard--name {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin: 0;
+}
+.grid__profileCard--timeframe {
+  display: block;
+  margin: 1rem 0rem;
+  color: hsl(236deg, 100%, 87%);
+  text-decoration: none;
+}
+.grid__profileCard--timeframe:active {
+  color: white;
+}
+.grid__profileCard--timeframe:hover {
+  cursor: pointer;
+}
+.grid__profileCard--timeframe--active {
+  color: white;
+}
+.grid__work {
   background-image: url("../../images/icon-work.svg");
   background-color: hsl(15deg, 100%, 70%);
 }
-
-.card-play {
+.grid__play {
   background-image: url("../../images/icon-play.svg");
   background-color: hsl(195deg, 74%, 62%);
 }
-
-.card-study {
+.grid__study {
   background-image: url("../../images/icon-study.svg");
   background-color: hsl(348deg, 100%, 68%);
 }
-
-.card-exercise {
+.grid__exercise {
   background-image: url("../../images/icon-exercise.svg");
   background-color: hsl(145deg, 58%, 55%);
 }
-
-.card-social {
+.grid__social {
   background-image: url("../../images/icon-social.svg");
   background-color: hsl(264deg, 64%, 52%);
 }
-
-.card-selfcare {
+.grid__selfcare {
   background-image: url("../../images/icon-self-care.svg");
   background-color: hsl(43deg, 84%, 65%);
 }
-
-.card-content {
+.grid__card--content {
   height: 9.1rem;
   width: 12.1rem;
   background-color: hsl(235deg, 46%, 20%);
@@ -86,51 +116,27 @@ html {
   padding: 1.5rem;
   overflow: hidden;
 }
-
-.main-content {
-  height: 18rem;
-  background-color: hsl(246deg, 80%, 60%);
-  border-radius: 15px;
-  padding: 1.5rem;
-}
-
-.card-title {
+.grid__card--title {
   display: inline;
   font-size: 1.2rem;
   font-weight: 500;
 }
-
-.elipsis {
+.grid__card--elipsis {
   position: absolute;
   left: 80%;
 }
-.elipsis:active {
+.grid__card--elipsis:active {
   filter: brightness(50);
 }
-
-.card-hrs {
+.grid__card--hrs {
   font-size: 3rem;
   margin: 2rem 0rem 0rem 0rem;
   font-weight: 300;
 }
-
-.card-week-total, .report {
+.grid__card--weekTotal, .grid__card__mainReport {
   font-size: 1rem;
   color: hsl(236deg, 100%, 87%);
   font-weight: 300;
-}
-
-.profile-pic {
-  border: 3px solid white;
-  border-radius: 50%;
-  height: 4rem;
-  margin-bottom: 1rem;
-}
-
-.name {
-  font-size: 2.5rem;
-  font-weight: 300;
-  margin: 0;
 }
 
 ul {
@@ -139,30 +145,36 @@ ul {
   margin-top: 2.5rem;
 }
 
-.timeframe {
-  display: block;
-  margin: 1rem 0rem;
-  color: hsl(236deg, 100%, 87%);
-  text-decoration: none;
-}
-.timeframe:active {
-  color: white;
-}
-.timeframe:hover {
-  cursor: pointer;
-}
-
-.active {
-  color: white;
-}
-
 @media only screen and (max-width: 725px) {
-  .container > * {
+  .grid > * {
     width: 50rem;
     height: 18rem;
     margin: 2rem auto;
   }
-  .card-content {
+  .grid__profileCard {
+    height: 28rem;
+  }
+  .grid__profileCard--content {
+    display: grid;
+    grid-template-columns: 13rem auto;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "profile report" "profile name";
+  }
+  .grid__profileCard--profilePic {
+    height: 10rem;
+    margin-top: 3rem;
+    grid-area: profile;
+  }
+  .grid__profileCard--report {
+    align-self: flex-end;
+    font-size: 2rem;
+    margin-bottom: 0rem;
+  }
+  .grid__profileCard--timeframe {
+    display: inline;
+    font-size: 2rem;
+  }
+  .grid__card--content {
     position: relative;
     width: 46.1rem;
     height: 10rem;
@@ -170,61 +182,43 @@ ul {
     padding: 2rem;
     top: 5rem;
   }
-  .elipsis {
+  .grid__card--elipsis {
     left: 90%;
     bottom: 9rem;
   }
-  .card-title {
+  .grid__card--title {
     display: block;
     font-size: 2rem;
     margin-bottom: 1rem;
   }
-  .card-hrs {
+  .grid__card--hrs {
     display: inline;
     font-size: 4rem;
   }
-  .card-week-total {
+  .grid__card--weekTotal {
     font-size: 2rem;
     display: inline;
     float: right;
-  }
-  .main-content {
-    display: grid;
-    grid-template-columns: 13rem auto;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas: "profile report" "profile name";
-  }
-  .main-card {
-    height: 28rem;
-  }
-  .profile-pic {
-    height: 10rem;
-    margin-top: 3rem;
-    grid-area: profile;
-  }
-  .report {
-    align-self: flex-end;
-    font-size: 2rem;
-    margin-bottom: 0rem;
   }
   ul {
     display: flex;
     justify-content: space-around;
     padding: 0rem;
   }
-  li {
+  ul li {
     display: inline;
   }
-  .timeframe {
-    display: inline;
-    font-size: 2rem;
+}
+@media only screen and (max-width: 550px) {
+  .grid__card--content {
+    top: 6rem;
   }
 }
 /*Colors*/
 /*Cards*/
 /*General colors*/
 /* Media queries */
-.container {
+.grid {
   position: absolute;
   display: grid;
   grid-template-columns: repeat(4, auto);
@@ -237,7 +231,7 @@ ul {
 }
 
 @media only screen and (max-width: 725px) {
-  .container {
+  .grid {
     display: block;
     position: static;
     transform: translate(0%, 0%);

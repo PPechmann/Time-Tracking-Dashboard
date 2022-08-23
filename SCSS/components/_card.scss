@@ -1,6 +1,6 @@
 
 
-.container > * {
+.grid > * {
     color: white;
     background-color: $darkblue;
     border-radius: 15px;
@@ -9,100 +9,128 @@
     background-position: 90% 0;
 }
 
-.main-card {
-    grid-area: main;
-    grid-row: 1 /span 2;
-    height: 31rem;
-    background-color: $darkblue;
-}
+.grid {
 
-.card-work {
-    background-image: url("../../images/icon-work.svg");
-    background-color: $redwork;
-}
+    &__profileCard {
+        grid-area: main;
+        grid-row: 1 /span 2;
+        height: 31rem;
+        background-color: $darkblue;
 
-.card-play {
-    background-image: url("../../images/icon-play.svg");
-    background-color: $blueplay;
-}
+        &--content {
+            height: 18rem;
+            background-color: $blue;
+            border-radius: 15px;
+            padding: 1.5rem;
+        }
 
-.card-study {
-    background-image: url("../../images/icon-study.svg");
-    background-color: $redstudy;
-}
+        &--profilePic {
+            border: 3px solid white;
+            border-radius: 50%;
+            height: 4rem;
+            margin-bottom: 1rem;
+        }
 
-.card-exercise {
-    background-image: url("../../images/icon-exercise.svg");
-    background-color: $greenexercise;
-}
+        &--name {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin: 0;
+        }
 
-.card-social {
-    background-image: url("../../images/icon-social.svg");
-    background-color: $violetsocial;
-}
+        &--timeframe {
+            display: block;
+            margin: 1rem 0rem;
+            color: $paleblue;
+            text-decoration: none;
+        
+            &:active {
+                color: white;
+            }
+        
+            &:hover {
+                cursor: pointer;
+            }
+    
+            &--active {
+                color: white;
+            }
+        }
+    }
 
-.card-selfcare {
-    background-image: url("../../images/icon-self-care.svg");
-    background-color: $orangeselfcare;
-}
 
-.card-content {
-    height: 9.1rem;
-    width: 12.1rem;
-    background-color: $darkblue;
-    position: relative;
-    top: 3rem;
-    border-radius: 15px;
-    padding: 1.5rem;
-    overflow: hidden;
-}
+    &__work {
+        background-image: url("../../images/icon-work.svg");
+        background-color: $redwork;
+    }
 
-.main-content {
-    height: 18rem;
-    background-color: $blue;
-    border-radius: 15px;
-    padding: 1.5rem;
-}
+    &__play {
+        background-image: url("../../images/icon-play.svg");
+        background-color: $blueplay;
+    }
 
-.card-title {
-    display: inline;
-    font-size: 1.2rem;
-    font-weight: 500;
-}
+    &__study {
+        background-image: url("../../images/icon-study.svg");
+        background-color: $redstudy;
+    }
 
-.elipsis {
-    position: absolute;
-    left: 80%;
+    &__exercise {
+        background-image: url("../../images/icon-exercise.svg");
+        background-color: $greenexercise;
+    }
 
-    &:active {
-        filter: brightness(50);
+    &__social{
+        background-image: url("../../images/icon-social.svg");
+        background-color: $violetsocial;
+    }
+
+    &__selfcare {
+        background-image: url("../../images/icon-self-care.svg");
+        background-color: $orangeselfcare;
+    }
+
+    &__card {
+
+
+        &--content {
+            height: 9.1rem;
+            width: 12.1rem;
+            background-color: $darkblue;
+            position: relative;
+            top: 3rem;
+            border-radius: 15px;
+            padding: 1.5rem;
+            overflow: hidden;
+        }
+
+        &--title {
+            display: inline;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        &--elipsis {
+            position: absolute;
+            left: 80%;
+        
+            &:active {
+                filter: brightness(50);
+            }
+        }
+
+        &--hrs {
+            font-size: 3rem;
+            margin: 2rem 0rem 0rem 0rem;
+            font-weight: 300;
+        }
+
+        &--weekTotal, &__mainReport {
+            font-size: 1rem;
+            color: $paleblue;
+            font-weight: 300;
+        }
     }
 }
 
-.card-hrs {
-    font-size: 3rem;
-    margin: 2rem 0rem 0rem 0rem;
-    font-weight: 300;
-}
-
-.card-week-total, .report {
-    font-size: 1rem;
-    color: $paleblue;
-    font-weight: 300;
-}
-
-.profile-pic {
-    border: 3px solid white;
-    border-radius: 50%;
-    height: 4rem;
-    margin-bottom: 1rem;
-}
-
-.name {
-    font-size: 2.5rem;
-    font-weight: 300;
-    margin: 0;
-}
 
 ul {
     list-style-type: none;
@@ -110,88 +138,83 @@ ul {
     margin-top: 2.5rem;
 }
 
-.timeframe {
-    display: block;
-    margin: 1rem 0rem;
-    color: $paleblue;
-    text-decoration: none;
-
-    &:active {
-        color: white;
-    }
-
-    &:hover {
-        cursor: pointer;
-    }
-}
-
-.active {
-    color: white;
-}
 
 
 @media only screen and (max-width: $small-port){
-    .container > * {
+    .grid > * {
         width: 50rem;
         height: 18rem;
         margin: 2rem auto;
     }
 
-    .card-content {
-        position: relative;
-        width: 46.10rem;
-        height: 10rem;
-        margin: 5rem 0rem;
-        padding: 2rem;
-        top: 5rem;
-    }
+    .grid {
 
-    .elipsis {
-        left: 90%;
-        bottom: 9rem;
-    }
+        &__profileCard {
 
-    .card-title {
-        display: block;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
+            height: 28rem;
 
-    .card-hrs {
-        display: inline;
-        font-size: 4rem;
-    }
+            &--content {
+                display: grid;
+                grid-template-columns: 13rem auto;
+                grid-template-rows: repeat(2, 1fr);
+                grid-template-areas: 
+                "profile report"
+                "profile name"
+                ;
+            }
 
-    .card-week-total {
-        font-size: 2rem;
-        display: inline;
-        float: right;
-    }
+            &--profilePic {
+                height: 10rem;
+                margin-top: 3rem;
+                grid-area: profile;
+            }
 
-    .main-content {
-        display: grid;
-        grid-template-columns: 13rem auto;
-        grid-template-rows: repeat(2, 1fr);
-        grid-template-areas: 
-        "profile report"
-        "profile name"
-        ;
-    }
+            &--report {
+                align-self: flex-end;
+                font-size: 2rem;
+                margin-bottom: 0rem;
+            }
 
-    .main-card {
-        height: 28rem;
-    }
+            &--timeframe {
+                display: inline;
+                font-size: 2rem;
+            }
+        }
+        
 
-    .profile-pic {
-        height: 10rem;
-        margin-top: 3rem;
-        grid-area: profile;
-    }
+        &__card {
 
-    .report {
-        align-self: flex-end;
-        font-size: 2rem;
-        margin-bottom: 0rem;
+            &--content {
+                position: relative;
+                width: 46.10rem;
+                height: 10rem;
+                margin: 5rem 0rem;
+                padding: 2rem;
+                top: 5rem;
+            }
+
+            &--elipsis {
+                left: 90%;
+                bottom: 9rem;
+            }
+
+            &--title {
+                display: block;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            &--hrs {
+                display: inline;
+                font-size: 4rem;
+            }
+            
+            &--weekTotal {
+                font-size: 2rem;
+                display: inline;
+                float: right;
+            }
+        }
     }
 
     ul {
@@ -200,14 +223,20 @@ ul {
         padding: 0rem;
     }
 
-    li {
+    ul li {
         display: inline;
-    }
-
-    .timeframe {
-        display: inline;
-        font-size: 2rem;
     }
 
 }
 
+@media only screen and (max-width: $smallest-port) {
+    .grid {
+
+        &__card {
+
+            &--content {
+                top: 6rem;
+            }
+        }
+    }
+}
