@@ -62,6 +62,11 @@ html {
   height: 4rem;
   margin-bottom: 1rem;
 }
+.grid__profileCard--report {
+  font-size: 1rem;
+  color: hsl(236deg, 100%, 87%);
+  font-weight: 300;
+}
 .grid__profileCard--name {
   font-size: 2.5rem;
   font-weight: 300;
@@ -73,14 +78,8 @@ html {
   color: hsl(236deg, 100%, 87%);
   text-decoration: none;
 }
-.grid__profileCard--timeframe:active {
-  color: white;
-}
 .grid__profileCard--timeframe:hover {
   cursor: pointer;
-}
-.grid__profileCard--timeframe--active {
-  color: white;
 }
 .grid__work {
   background-image: url("../../images/icon-work.svg");
@@ -133,10 +132,14 @@ html {
   margin: 2rem 0rem 0rem 0rem;
   font-weight: 300;
 }
-.grid__card--weekTotal, .grid__card__mainReport {
+.grid__card--previous {
   font-size: 1rem;
   color: hsl(236deg, 100%, 87%);
   font-weight: 300;
+}
+
+.active {
+  color: white;
 }
 
 ul {
@@ -145,6 +148,12 @@ ul {
   margin-top: 2.5rem;
 }
 
+.fadeIn {
+  -webkit-animation: fadeIn 5s;
+          animation: fadeIn 5s;
+}
+
+/*media queries - only small and smallest (see variables) */
 @media only screen and (max-width: 725px) {
   .grid > * {
     width: 50rem;
@@ -162,7 +171,7 @@ ul {
   }
   .grid__profileCard--profilePic {
     height: 10rem;
-    margin-top: 3rem;
+    margin-top: 3.5rem;
     grid-area: profile;
   }
   .grid__profileCard--report {
@@ -195,7 +204,7 @@ ul {
     display: inline;
     font-size: 4rem;
   }
-  .grid__card--weekTotal {
+  .grid__card--previous {
     font-size: 2rem;
     display: inline;
     float: right;
@@ -210,6 +219,12 @@ ul {
   }
 }
 @media only screen and (max-width: 550px) {
+  .grid__profileCard--report {
+    font-size: 2rem;
+  }
+  .grid__profileCard--name {
+    font-size: 3rem;
+  }
   .grid__card--content {
     top: 6rem;
   }

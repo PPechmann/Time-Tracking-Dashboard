@@ -31,6 +31,12 @@
             margin-bottom: 1rem;
         }
 
+        &--report {
+            font-size: 1rem;
+            color: $paleblue;
+            font-weight: 300;
+        }
+
         &--name {
             font-size: 2.5rem;
             font-weight: 300;
@@ -43,17 +49,12 @@
             color: $paleblue;
             text-decoration: none;
         
-            &:active {
-                color: white;
-            }
+
         
             &:hover {
                 cursor: pointer;
             }
     
-            &--active {
-                color: white;
-            }
         }
     }
 
@@ -90,7 +91,6 @@
 
     &__card {
 
-
         &--content {
             height: 9.1rem;
             width: 12.1rem;
@@ -123,7 +123,7 @@
             font-weight: 300;
         }
 
-        &--weekTotal, &__mainReport {
+        &--previous {
             font-size: 1rem;
             color: $paleblue;
             font-weight: 300;
@@ -131,6 +131,9 @@
     }
 }
 
+.active{
+    color: white;
+}
 
 ul {
     list-style-type: none;
@@ -138,7 +141,11 @@ ul {
     margin-top: 2.5rem;
 }
 
+.fadeIn {
+    animation: fadeIn 5s;
+}
 
+/*media queries - only small and smallest (see variables) */
 
 @media only screen and (max-width: $small-port){
     .grid > * {
@@ -165,7 +172,7 @@ ul {
 
             &--profilePic {
                 height: 10rem;
-                margin-top: 3rem;
+                margin-top: 3.5rem;
                 grid-area: profile;
             }
 
@@ -181,7 +188,6 @@ ul {
             }
         }
         
-
         &__card {
 
             &--content {
@@ -209,7 +215,7 @@ ul {
                 font-size: 4rem;
             }
             
-            &--weekTotal {
+            &--previous {
                 font-size: 2rem;
                 display: inline;
                 float: right;
@@ -231,6 +237,17 @@ ul {
 
 @media only screen and (max-width: $smallest-port) {
     .grid {
+
+        &__profileCard {
+
+            &--report {
+                font-size: 2rem;
+            }
+
+            &--name {
+                font-size: 3rem;
+            }
+        }
 
         &__card {
 
